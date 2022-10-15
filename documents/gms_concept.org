@@ -1,0 +1,36 @@
+#+TITLE: Glucose Monitoring Design
+#+AUTHOR: Aziz Faozi
+
+* Database
+GlucoseDatabase
+** GlucoseTable
+ |---------+----------+-----------+--------------|
+ | ID_glc  | username | Datestamp | DataCaptured |
+ | integer | char     | timestamp | timestamp    |
+ |---------+----------+-----------+--------------|
+
+code to create  
+#+BEGIN_SRC sql
+CREATE TABLE `GlucoseDatabase` (
+`ID_glc` int NOT NULL PRIMARY KEY,
+`username` varchar(255) NOT NULL,
+`Datestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`DataCaptured` TIMESTAMP, 
+)
+
+#+END_SRC
+** UserTypeTable
+#+BEGIN_SRC sql
+CREATE TABLE `UserTypeTable` (
+`User_ID` int NOT NULL PRIMARY KEY,
+`username` varchar(255) NOT NULL,
+`typeuser` integer(255) NOT NULL DEFAULT 9,
+)
+
+#+END_SRC
+ |---------+----------+----------|
+ | User_ID | username | typeuser |
+ | integer | char     | integer  |
+ |---------+----------+----------|
+ 
+** Keterangan type User
