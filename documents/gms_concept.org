@@ -3,6 +3,9 @@
 
 * Database
 GlucoseDatabase
+#+begin_SRC sql
+create database GlucoseDatabase 
+#+END_SRC 
 ** GlucoseTable
  |---------+----------+-----------+--------------|
  | ID_glc  | username | Datestamp | DataCaptured |
@@ -11,12 +14,12 @@ GlucoseDatabase
 
 code to create  
 #+BEGIN_SRC sql
-CREATE TABLE `GlucoseDatabase` (
+CREATE TABLE `GlucoseTable` (
 `ID_glc` int NOT NULL PRIMARY KEY,
 `username` varchar(255) NOT NULL,
 `Datestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-`DataCaptured` TIMESTAMP, 
-)
+`DataCaptured` datetime
+);
 
 #+END_SRC
 ** UserTypeTable
@@ -24,8 +27,8 @@ CREATE TABLE `GlucoseDatabase` (
 CREATE TABLE `UserTypeTable` (
 `User_ID` int NOT NULL PRIMARY KEY,
 `username` varchar(255) NOT NULL,
-`typeuser` integer(255) NOT NULL DEFAULT 9,
-)
+`typeuser` integer(255) NOT NULL DEFAULT 9
+);
 
 #+END_SRC
  |---------+----------+----------|
@@ -34,3 +37,9 @@ CREATE TABLE `UserTypeTable` (
  |---------+----------+----------|
  
 ** Keterangan type User
+#+BEGIN_SRC sql
+CREATE USER '20022001'@'localhost' IDENTIFIED BY 'Aziztampan1234';
+GRANT ALL PRIVILEGES ON GlucoseDatabase.* TO '20022001'@'localhost';
+FLUSH Privileges;
+
+#+END_SRC
