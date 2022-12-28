@@ -18,7 +18,8 @@ CREATE TABLE `GlucoseTable` (
 `ID_glc` int NOT NULL PRIMARY KEY,
 `username` varchar(255) NOT NULL,
 `Datestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-`DataCaptured` datetime
+`DataCaptured` datetime,
+`GlucoseData` int,
 );
 
 #+END_SRC
